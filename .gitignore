@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Personal files not for deployment
+我的照片.HEIC
+執行計劃.md
+首頁圖.png
+
+# Design source files (not needed for web)
+01_專案作品 (Projects)/
+02_研究與分析 (Research & Analysis)/

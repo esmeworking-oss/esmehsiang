@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>松鼠醫生App與後台 — Esme Chang</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Noto+Sans+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Esme.</a>
+      <button class="nav-toggle" id="navToggle" aria-label="開啟選單">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#research">Research</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="project-hero">
+    <div class="container">
+      <a href="index.html#projects" class="back-link">&larr; 返回作品列表</a>
+      <span class="project-hero-tag">醫療 App</span>
+      <h1>松鼠醫生App與後台</h1>
+      <p class="project-hero-desc">讓不會打字的阿公阿嬤，也能輕鬆記錄每天的健康狀態。一套串聯病患 App 與醫護後台的雙端系統，用最低的操作門檻，換來最完整的照護數據。</p>
+      <div class="project-hero-meta">
+        <span><strong>角色：</strong>UIUX 設計師</span>
+        <span><strong>時間：</strong>2025.7 – 2026.1</span>
+        <span><strong>類型：</strong>iOS App + Web 後台</span>
+      </div>
+      <p class="project-hero-disclaimer">基於保密協議，本頁僅展示部分畫面與流程，不包含完整介面內容。</p>
+    </div>
+  </section>
+
+  <!-- 痛點 -->
+  <section class="project-section">
+    <div class="container">
+      <h2 class="reveal">解決的痛點</h2>
+      <table class="styled-table reveal">
+        <thead>
+          <tr><th>對象</th><th>痛點</th><th>設計解法</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>高齡病患</td><td>視力退化，看不清小字</td><td>問卷頁面採用超大粗體中文字，每題一頁，減少視覺干擾</td></tr>
+          <tr><td>病患</td><td>回診前難以描述症狀</td><td>Symptom Diary 提供 30+ 症狀圖文選單，每日點選記錄</td></tr>
+          <tr><td>病患</td><td>量血壓後忘記紀錄</td><td>BP Diary 快速 Modal 記錄 + 推播提醒</td></tr>
+          <tr><td>病患</td><td>不知道健康狀況是否異常</td><td>血壓日曆用綠/黃/紅色點視覺化每日狀態</td></tr>
+          <tr><td>病患</td><td>健康記錄習慣難以持續</td><td>Streak 連續打卡 + 植物生長視覺化</td></tr>
+          <tr><td>長輩</td><td>不熟悉帳號密碼登入</td><td>QR Code 掃描與醫師綁定，免帳密</td></tr>
+          <tr><td>家屬</td><td>不了解病患即時狀況</td><td>My Care Circle 整合醫師 + 照護者清單</td></tr>
+          <tr><td>醫師</td><td>回診前缺乏病患日常數據</td><td>後台查看追蹤紀錄，AI 自動彙整報告</td></tr>
+          <tr><td>護理師</td><td>病房設備管理繁瑣</td><td>Ward 後台掃描 QR Code 自動配對床位</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 使用者流程 -->
+  <section class="project-section">
+    <div class="container">
+      <h2 class="reveal">使用者流程</h2>
+
+      <div class="flow-block reveal">
+        <h3>流程 A — 登入與醫師連動</h3>
+        <div class="flow-steps">
+          開啟 App <span class="flow-arrow">&rarr;</span>
+          顯示 QR Code <span class="flow-arrow">&rarr;</span>
+          醫師用後台掃描 <span class="flow-arrow">&rarr;</span>
+          帳號自動綁定 <span class="flow-arrow">&rarr;</span>
+          進入主頁
+        </div>
+        <div class="flow-images">
+          <img src="assets/images/projects/symptom-squirrel/overview.png" alt="系統總覽 — 登入與綁定流程" loading="lazy">
+        </div>
+      </div>
+
+      <div class="flow-block reveal">
+        <h3>流程 B — 每日問卷填寫</h3>
+        <div class="flow-steps">
+          主頁提示 <span class="flow-arrow">&rarr;</span>
+          Start Assessment <span class="flow-arrow">&rarr;</span>
+          超大字體逐題填寫 <span class="flow-arrow">&rarr;</span>
+          Submit <span class="flow-arrow">&rarr;</span>
+          慶祝動畫 <span class="flow-arrow">&rarr;</span>
+          引導進入症狀紀錄
+        </div>
+        <div class="flow-images">
+          <img src="assets/images/projects/symptom-squirrel/flow.png" alt="每日問卷填寫流程圖" loading="lazy">
+        </div>
+      </div>
+
+      <div class="flow-block reveal">
+        <h3>介面流程 C — 血壓記錄</h3>
+        <div class="flow-steps">
+          Tracking <span class="flow-arrow">&rarr;</span>
+          BP Diary <span class="flow-arrow">&rarr;</span>
+          Log Blood Pressure <span class="flow-arrow">&rarr;</span>
+          輸入 SYS/DIA/PUL <span class="flow-arrow">&rarr;</span>
+          Save <span class="flow-arrow">&rarr;</span>
+          查看月曆（綠/黃/紅色點）
+        </div>
+        <div class="flow-images flow-images--mobile">
+          <img src="assets/images/projects/symptom-squirrel/bp-start.png" alt="血壓紀錄首頁" loading="lazy">
+          <img src="assets/images/projects/symptom-squirrel/bp-log.png" alt="記錄血壓 Modal" loading="lazy">
+
+        </div>
+      </div>
+
+      <div class="flow-block reveal">
+        <h3>介面流程 D — 症狀紀錄</h3>
+        <div class="flow-steps">
+          Tracking <span class="flow-arrow">&rarr;</span>
+          Symptoms <span class="flow-arrow">&rarr;</span>
+          分頁症狀清單（30+ 症狀）<span class="flow-arrow">&rarr;</span>
+          Follow-up 追問 <span class="flow-arrow">&rarr;</span>
+          Add to Diary <span class="flow-arrow">&rarr;</span>
+          Streak + 植物生長動畫
+        </div>
+        <div class="flow-images flow-images--mobile">
+          <img src="assets/images/projects/symptom-squirrel/symptom-tracking.png" alt="症狀追蹤頁" loading="lazy">
+          <img src="assets/images/projects/symptom-squirrel/symptom-list.png" alt="症狀清單" loading="lazy">
+          <img src="assets/images/projects/symptom-squirrel/symptom-default.png" alt="症狀紀錄預設" loading="lazy">
+          <img src="assets/images/projects/symptom-squirrel/symptom-logged.png" alt="紀錄完成" loading="lazy">
+        </div>
+      </div>
+
+      <div class="flow-block reveal">
+        <h3>介面流程 E — 飲食記錄</h3>
+        <div class="flow-steps">
+          Tracking <span class="flow-arrow">&rarr;</span>
+          Diet <span class="flow-arrow">&rarr;</span>
+          拍照或文字記錄 <span class="flow-arrow">&rarr;</span>
+          輸入餐點名稱 <span class="flow-arrow">&rarr;</span>
+          Gallery 查看歷史
+        </div>
+        <div class="flow-images flow-images--mobile">
+          <img src="assets/images/projects/symptom-squirrel/diet-onboarding.png" alt="飲食記錄引導頁" loading="lazy">
+          <img src="assets/images/projects/symptom-squirrel/diet-gallery.png" alt="飲食月曆相簿" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 設計原因 -->
+  <section class="project-section">
+    <div class="container">
+      <h2 class="reveal">設計原因</h2>
+      <table class="styled-table reveal">
+        <thead>
+          <tr><th>設計元素</th><th>選擇</th><th>原因</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>主色調</td><td>墨綠色（Teal Green）</td><td>傳達醫療專業感與安心感，綠色系具有「健康、自然、平靜」的心理暗示</td></tr>
+          <tr><td>輔助色</td><td>綠/黃/紅三色系統</td><td>交通燈隱喻，高齡用戶無需閱讀文字即可直覺理解</td></tr>
+          <tr><td>字體風格</td><td>SF Pro + 大粗體</td><td>遵循 iOS HIG，問卷頁字級極大，專為視力退化的高齡用戶設計</td></tr>
+          <tr><td>圖示風格</td><td>松鼠吉祥物 + 症狀插圖</td><td>降低醫療嚴肅感，情感化設計增加使用動機</td></tr>
+          <tr><td>互動風格</td><td>正向回饋動畫</td><td>每次完成任務給予即時獎勵感，搭配 Streak 強化習慣養成</td></tr>
+          <tr><td>登入方式</td><td>QR Code 取代帳密</td><td>長輩對鍵盤輸入有障礙，掃碼零輸入門檻</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 專案亮點 -->
+  <section class="project-section">
+    <div class="container">
+      <h2 class="reveal">專案亮點</h2>
+      <ul class="highlights-list reveal">
+        <li><strong>病患記錄，醫師秒懂</strong> — App 端日常數據即時同步後台，AI 自動產出回診摘要，讓每次看診都有據可依</li>
+        <li><strong>為「最不會用手機的人」而設計</strong> — 超大字體、圖文點選、掃碼免密碼，每個細節都在降低一道門檻</li>
+        <li><strong>讓記錄變成一種期待</strong> — 連續打卡養成植物、松鼠陪伴鼓勵，四重正向回饋讓健康習慣自然留存</li>
+        <li><strong>一眼看懂的健康狀態</strong> — 紅黃綠交通燈直覺映射血壓數值，不需讀數字也能掌握趨勢</li>
+        <li><strong>從零到一的系統思考</strong> — 完整 User Flow 涵蓋 5 條核心路徑，展現端到端的設計規劃力</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <div class="gallery-group reveal">
+        <h3>系統總覽與流程圖</h3>
+        <div class="gallery">
+          <img src="assets/images/projects/symptom-squirrel/overview.png" alt="系統總覽" loading="lazy">
+          <img src="assets/images/projects/symptom-squirrel/flow.png" alt="使用者流程圖" loading="lazy">
+        </div>
+      </div>
+
+      <div class="gallery-group reveal">
+        <h3>醫護後台 — 病房管理（Ward）</h3>
+        <div class="gallery gallery--desktop">
+          <img src="assets/images/projects/symptom-squirrel/ward-setup.png" alt="病房設定與裝置配對" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 專案導覽 -->
+  <section class="project-section">
+    <div class="container">
+      <div class="project-nav">
+        <span></span>
+        <a href="project-tsg-member.html">下一個：台鋼會員系統 &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Esme Chang. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

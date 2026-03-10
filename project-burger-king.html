@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>豪點王 Redesign — Esme Chang</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Noto+Sans+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Esme.</a>
+      <button class="nav-toggle" id="navToggle" aria-label="開啟選單">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#research">Research</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="project-hero">
+    <div class="container">
+      <a href="index.html#projects" class="back-link">&larr; 返回作品列表</a>
+      <span class="project-hero-tag">LINE LIFF 改版</span>
+      <h1>豪點王 Redesign</h1>
+      <p class="project-hero-desc">把一個「打開就想關掉」的速食 LINE LIFF 網站，改成用戶真正會用的會員工具 — 以 Before / After 對照，讓每一處改善都有跡可循。</p>
+      <div class="project-hero-meta">
+        <span><strong>角色：</strong>UIUX 設計師</span>
+        <span><strong>時間：</strong>2024.8 – 2024.11</span>
+        <span><strong>類型：</strong>LINE LIFF Redesign</span>
+      </div>
+      <p class="project-hero-disclaimer">基於保密協議，本頁僅展示部分畫面與流程，不包含完整介面內容。</p>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <h2 class="reveal">解決的痛點</h2>
+      <table class="styled-table reveal">
+        <thead>
+          <tr><th>舊版問題</th><th>新版設計解法</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>首頁資訊雜亂，Banner 佔據大量版面</td><td>會員條碼 + QR Code 置於首頁核心位置</td></tr>
+          <tr><td>視覺風格過時（棕色暗沈）</td><td>白底 + 金黃色 CTA，乾淨現代</td></tr>
+          <tr><td>優惠券只顯示數量，無分類</td><td>5 種狀態分類 + 使用條件說明</td></tr>
+          <tr><td>堡幣系統入口不明顯</td><td>首頁直接顯示堡幣 + 到期提醒 + 兌換按鈕</td></tr>
+          <tr><td>缺少載具綁定提示</td><td>區分已/未綁定載具兩種狀態</td></tr>
+          <tr><td>導覽列圖示不直覺</td><td>5 個清楚標籤，首頁居中</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <h2 class="reveal">使用者流程</h2>
+
+      <div class="flow-block reveal">
+        <h3>首頁核心流程</h3>
+        <div class="flow-steps">
+          開啟網站 <span class="flow-arrow">&rarr;</span>
+          Hi, 用戶名 + 會員等級 <span class="flow-arrow">&rarr;</span>
+          堡幣餘額 + 即將到期 <span class="flow-arrow">&rarr;</span>
+          堡幣紀錄 / 開始兌換 <span class="flow-arrow">&rarr;</span>
+          會員 QR Code + 載具條碼
+        </div>
+        <div class="flow-images flow-images--mobile">
+          <img src="assets/images/projects/burger-king/old-home.png" alt="舊版首頁" loading="lazy">
+          <img src="assets/images/projects/burger-king/new-home.png" alt="新版首頁 — 會員資訊優先" loading="lazy">
+          <img src="assets/images/projects/burger-king/new-points.png" alt="堡幣點數系統" loading="lazy">
+        </div>
+      </div>
+
+      <div class="flow-block reveal">
+        <h3>優惠券管理流程</h3>
+        <div class="flow-steps">
+          底部「優惠券」<span class="flow-arrow">&rarr;</span>
+          瀏覽可用列表 <span class="flow-arrow">&rarr;</span>
+          查看條件與到期日 <span class="flow-arrow">&rarr;</span>
+          出示給店員
+        </div>
+        <div class="flow-images flow-images--mobile">
+          <img src="assets/images/projects/burger-king/new-coupon.png" alt="優惠券管理介面" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <h2 class="reveal">設計原因</h2>
+      <table class="styled-table reveal">
+        <thead>
+          <tr><th>設計元素</th><th>舊版 → 新版</th><th>原因</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>主色調</td><td>棕色暗沈 → 白底 + 金黃色</td><td>大幅提升清爽感與品牌現代感</td></tr>
+          <tr><td>資訊層級</td><td>Banner 優先 → 功能優先</td><td>按使用頻率排列，符合 F 型閱讀模式</td></tr>
+          <tr><td>卡片設計</td><td>平面無層次 → 圓角 + 淺陰影</td><td>現代 UI 風格，提升視覺層次</td></tr>
+          <tr><td>底部導覽</td><td>4 tab → 5 tab，首頁居中</td><td>符合拇指熱區，最常用功能最易觸及</td></tr>
+          <tr><td>會員等級</td><td>僅文字 → 徽章式標籤</td><td>趣味命名增加品牌記憶點</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <h2 class="reveal">專案亮點</h2>
+      <ul class="highlights-list reveal">
+        <li><strong>改了什麼、為什麼改</strong> — Before / After 逐項對照，讓設計決策的價值不言自明</li>
+        <li><strong>把主角還給用戶</strong> — 首頁從 Banner 廣告牆翻轉為會員功能優先，資訊層級徹底重排</li>
+        <li><strong>每種情境都有對應畫面</strong> — 優惠券 5 種生命週期狀態 + 載具綁定雙狀態，零遺漏</li>
+        <li><strong>視覺語言的世代更新</strong> — 棕色暗沈感退場，白底金黃 CTA 登場，品牌感瞬間年輕十歲</li>
+        <li><strong>不是重新設計，是精準手術</strong> — 基於真實產品的痛點逐一開刀，展現 Redesign 的問題拆解與判斷力</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <div class="gallery-group reveal">
+        <h3>登入流程</h3>
+        <div class="gallery gallery--mobile">
+          <img src="assets/images/projects/burger-king/new-login.png" alt="新版登入頁面" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <div class="project-nav">
+        <a href="project-wingstars.html">&larr; 上一個：WINGSTARS 啦啦隊官方網站</a>
+        <a href="project-f2e-2023.html">下一個：The F2E 2023 &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container"><p>&copy; 2026 Esme Chang. All rights reserved.</p></div>
+  </footer>
+  <script src="main.js"></script>
+</body>
+</html>

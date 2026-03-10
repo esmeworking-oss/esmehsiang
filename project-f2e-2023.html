@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The F2E 2023 — Esme Chang</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Noto+Sans+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Esme.</a>
+      <button class="nav-toggle" id="navToggle" aria-label="開啟選單">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#research">Research</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="project-hero">
+    <div class="container">
+      <a href="index.html#projects" class="back-link">&larr; 返回作品列表</a>
+      <span class="project-hero-tag">RWD 設計</span>
+      <h1>The F2E 2023 第一關</h1>
+      <p class="project-hero-desc">一頁式競選官網，用敘事結構帶領選民從認識候選人到付諸行動 — 完整 RWD 三斷點，確保每個螢幕都能被說服。</p>
+      <div class="project-hero-meta">
+        <span><strong>角色：</strong>設計挑戰</span>
+        <span><strong>時間：</strong>2023</span>
+        <span><strong>類型：</strong>RWD 政治競選官網</span>
+      </div>
+      <p class="project-hero-disclaimer">基於保密協議，本頁僅展示部分畫面與流程，不包含完整介面內容。</p>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <h2 class="reveal">解決的痛點</h2>
+      <table class="styled-table reveal">
+        <thead>
+          <tr><th>痛點</th><th>設計解法</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>政治人物形象難以親民化</td><td>大面積候選人生活照 + 口語化標語</td></tr>
+          <tr><td>政見資訊量大，難以快速掌握</td><td>數字 + 圖示重點化呈現，降低閱讀門檻</td></tr>
+          <tr><td>小額捐款流程繁瑣</td><td>捐款彈窗 + 預設金額選項，最少步驟完成</td></tr>
+          <tr><td>不同裝置瀏覽體驗差異大</td><td>完整 RWD 三斷點設計</td></tr>
+          <tr><td>選民不知如何參與</td><td>Contact us 區塊整合聯絡方式</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <h2 class="reveal">使用者流程</h2>
+
+      <div class="flow-block reveal">
+        <h3>主頁瀏覽流程</h3>
+        <div class="flow-steps">
+          Hero（候選人照片 + 標語）<span class="flow-arrow">&rarr;</span>
+          Policy 政策焦點 <span class="flow-arrow">&rarr;</span>
+          Event 最新活動 <span class="flow-arrow">&rarr;</span>
+          Donation 小額捐款 <span class="flow-arrow">&rarr;</span>
+          Contact us
+        </div>
+        <div class="flow-images flow-images--desktop">
+          <img src="assets/images/projects/f2e-2023/desktop.png" alt="電腦版完整頁面" loading="lazy">
+          <img src="assets/images/projects/f2e-2023/tablet.png" alt="平板版" loading="lazy">
+          <img src="assets/images/projects/f2e-2023/mobile.png" alt="手機版" loading="lazy">
+        </div>
+      </div>
+
+      <div class="flow-block reveal">
+        <h3>捐款流程</h3>
+        <div class="flow-steps">
+          點擊「小額捐款」<span class="flow-arrow">&rarr;</span>
+          選擇/自訂金額 <span class="flow-arrow">&rarr;</span>
+          填寫捐款資訊 <span class="flow-arrow">&rarr;</span>
+          確認頁面 <span class="flow-arrow">&rarr;</span>
+          完成捐款
+        </div>
+        <div class="flow-images flow-images--desktop">
+          <img src="assets/images/projects/f2e-2023/donation.png" alt="捐款彈窗 — 金額選擇與確認" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <h2 class="reveal">設計原因</h2>
+      <table class="styled-table reveal">
+        <thead>
+          <tr><th>設計元素</th><th>選擇</th><th>原因</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>主色調</td><td>橘色（活力橙）</td><td>代表改革、創新，跳脫傳統藍/綠陣營框架</td></tr>
+          <tr><td>數字呈現</td><td>超大數字 + 橘色強調</td><td>比長篇文字更有衝擊力，搭配品牌色抓住視線</td></tr>
+          <tr><td>RWD 策略</td><td>三斷點：1440 / 834 / 360</td><td>覆蓋主流裝置，桌面雙欄→平板微調→手機單欄</td></tr>
+          <tr><td>Hero 區塊</td><td>人物照佔滿上方</td><td>政治競選核心是「人」，大面積照片建立情感連結</td></tr>
+          <tr><td>頁面結構</td><td>單頁式長捲動</td><td>線性敘事最符合說服邏輯</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <h2 class="reveal">專案亮點</h2>
+      <ul class="highlights-list reveal">
+        <li><strong>三種螢幕，同一個說服力</strong> — 1440 / 834 / 360 三斷點完整適配，內容重組而非單純縮放</li>
+        <li><strong>數字比文字更有力量</strong> — 複雜政策化為超大數字搭配一句話摘要，三秒內傳達核心訊息</li>
+        <li><strong>不只是看，更要行動</strong> — 捐款彈窗降低金流門檻，政策彈窗按需展開，互動設計服務轉化目標</li>
+        <li><strong>第一眼就抓住注意力</strong> — 開場轉場動畫營造儀式感，從進場瞬間建立品牌印象</li>
+        <li><strong>從「他是誰」到「我要支持」</strong> — Hero → Policy → Event → Donation，線性敘事完成完整說服閉環</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <div class="gallery-group reveal">
+        <h3>開場轉場動畫</h3>
+        <div class="gallery gallery--desktop">
+          <img src="assets/images/projects/f2e-2023/transition.png" alt="頁面進場轉場效果" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <div class="project-nav">
+        <a href="project-burger-king.html">&larr; 上一個：豪點王 Redesign</a>
+        <span></span>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container"><p>&copy; 2026 Esme Chang. All rights reserved.</p></div>
+  </footer>
+  <script src="main.js"></script>
+</body>
+</html>

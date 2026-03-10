@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>台鋼會員系統 — Esme Chang</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Noto+Sans+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Esme.</a>
+      <button class="nav-toggle" id="navToggle" aria-label="開啟選單">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#research">Research</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="project-hero">
+    <div class="container">
+      <a href="index.html#projects" class="back-link">&larr; 返回作品列表</a>
+      <span class="project-hero-tag">Web 會員系統</span>
+      <h1>台鋼會員系統</h1>
+      <p class="project-hero-desc">從註冊到兌換的完整會員旅程設計 — 以分步驟引導降低放棄率，用統一設計規範確保每個頁面都說同一種語言。</p>
+      <div class="project-hero-meta">
+        <span><strong>角色：</strong>產品設計師</span>
+        <span><strong>時間：</strong>2024.1 – 2024.6</span>
+        <span><strong>類型：</strong>桌面 + 手機響應式</span>
+      </div>
+      <p class="project-hero-disclaimer">基於保密協議，本頁僅展示部分畫面與流程，不包含完整介面內容。</p>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <h2 class="reveal">解決的痛點</h2>
+      <table class="styled-table reveal">
+        <thead>
+          <tr><th>痛點</th><th>設計解法</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>註冊流程冗長，中途放棄率高</td><td>5 步驟 Popup 流程，每步聚焦一件事</td></tr>
+          <tr><td>忘記密碼找回困難</td><td>多種驗證方式（OTP / Email），流程視覺化引導</td></tr>
+          <tr><td>點數機制不透明</td><td>點數流程圖清楚呈現獲取、兌換、到期規則</td></tr>
+          <tr><td>優惠券管理混亂</td><td>分類呈現（可使用/已使用/已過期）+ 到期提醒</td></tr>
+          <tr><td>個人資料修改不便</td><td>即時編輯 + 表單驗證與錯誤狀態提示</td></tr>
+          <tr><td>會員系統缺乏一致性</td><td>建立完整設計規範（Typography + Layout）</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <h2 class="reveal">使用者流程</h2>
+
+      <div class="flow-block reveal">
+        <h3>註冊流程（5 步驟 Popup）</h3>
+        <div class="flow-steps">
+          點「馬上開始」<span class="flow-arrow">&rarr;</span>
+          輸入手機號碼 <span class="flow-arrow">&rarr;</span>
+          OTP 驗證碼 <span class="flow-arrow">&rarr;</span>
+          設定密碼 <span class="flow-arrow">&rarr;</span>
+          填寫個人資訊 <span class="flow-arrow">&rarr;</span>
+          註冊成功
+        </div>
+      </div>
+
+      <div class="flow-block reveal">
+        <h3>忘記密碼流程</h3>
+        <div class="flow-steps">
+          忘記密碼 <span class="flow-arrow">&rarr;</span>
+          輸入手機號碼 <span class="flow-arrow">&rarr;</span>
+          OTP 驗證 <span class="flow-arrow">&rarr;</span>
+          重設密碼 <span class="flow-arrow">&rarr;</span>
+          完成
+        </div>
+      </div>
+
+      <div class="flow-block reveal">
+        <h3>點數兌換流程</h3>
+        <div class="flow-steps">
+          查看堡幣餘額 <span class="flow-arrow">&rarr;</span>
+          堡幣紀錄 <span class="flow-arrow">&rarr;</span>
+          點數商城 <span class="flow-arrow">&rarr;</span>
+          兌換確認
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <h2 class="reveal">設計原因</h2>
+      <table class="styled-table reveal">
+        <thead>
+          <tr><th>設計元素</th><th>選擇</th><th>原因</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>主色調</td><td>金黃色（暖金色系）</td><td>呼應台鋼品牌識別，傳達「尊榮會員」價值感</td></tr>
+          <tr><td>輔助色</td><td>深灰/黑色 + 白色背景</td><td>高對比確保可讀性，金+黑傳達品牌質感</td></tr>
+          <tr><td>字級系統</td><td>H1: 44px → Body Small: 12px（10 級）</td><td>所有行高統一 1.5x，確保全站一致性</td></tr>
+          <tr><td>註冊方式</td><td>分步驟 Popup</td><td>用戶始終看到主頁背景，降低離開感</td></tr>
+          <tr><td>CTA 按鈕</td><td>金黃色填滿按鈕</td><td>在白色背景上高度醒目，引導完成操作</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <h2 class="reveal">專案亮點</h2>
+      <ul class="highlights-list reveal">
+        <li><strong>從 0 建立設計語言</strong> — Typography 十級字階 + Layout Grid，確保跨頁面視覺一致性</li>
+        <li><strong>每一種例外都被考慮到</strong> — 空白、填寫中、錯誤、成功，四種狀態完整覆蓋真實場景</li>
+        <li><strong>先見森林，再見樹木</strong> — Sitemap 清楚劃分功能層級，從全局架構推導每一頁的存在理由</li>
+        <li><strong>讓點數規則不再是黑箱</strong> — 視覺化流程圖拆解獲取、消耗、到期的完整生命週期</li>
+        <li><strong>每一步只做一件事</strong> — 5 步 Popup 漸進式註冊，用戶始終看到主頁背景，安全感不中斷</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <h2 class="reveal">介面流程展示</h2>
+
+      <!-- 註冊流程 animated -->
+      <div class="flow-showcase reveal" data-flow="tsg-signup" data-speed="2200">
+        <h3>註冊流程（5 步驟 Popup）</h3>
+        <div class="flow-timeline">
+          <div class="flow-step" data-index="0" data-pos="7% 15%">
+            <div class="flow-step-dot">1</div>
+            <div class="flow-step-label">首頁入口</div>
+            <div class="flow-step-desc">點擊「馬上開始」</div>
+          </div>
+          <div class="flow-connector"><div class="flow-connector-fill"></div></div>
+          <div class="flow-step" data-index="1" data-pos="24% 15%">
+            <div class="flow-step-dot">2</div>
+            <div class="flow-step-label">手機驗證</div>
+            <div class="flow-step-desc">輸入手機號碼</div>
+          </div>
+          <div class="flow-connector"><div class="flow-connector-fill"></div></div>
+          <div class="flow-step" data-index="2" data-pos="39% 15%">
+            <div class="flow-step-dot">3</div>
+            <div class="flow-step-label">OTP 驗證</div>
+            <div class="flow-step-desc">輸入簡訊驗證碼</div>
+          </div>
+          <div class="flow-connector"><div class="flow-connector-fill"></div></div>
+          <div class="flow-step" data-index="3" data-pos="54% 15%">
+            <div class="flow-step-dot">4</div>
+            <div class="flow-step-label">設定密碼</div>
+            <div class="flow-step-desc">建立帳號密碼</div>
+          </div>
+          <div class="flow-connector"><div class="flow-connector-fill"></div></div>
+          <div class="flow-step" data-index="4" data-pos="69% 15%">
+            <div class="flow-step-dot">5</div>
+            <div class="flow-step-label">個人資訊</div>
+            <div class="flow-step-desc">填寫基本資料</div>
+          </div>
+          <div class="flow-connector"><div class="flow-connector-fill"></div></div>
+          <div class="flow-step" data-index="5" data-pos="85% 15%">
+            <div class="flow-step-dot">6</div>
+            <div class="flow-step-label">註冊成功</div>
+            <div class="flow-step-desc">歡迎加入會員</div>
+          </div>
+        </div>
+        <div class="flow-image-viewport" data-aspect="landscape">
+          <img src="assets/images/projects/tsg-member/signup.png" alt="註冊流程畫面" loading="lazy">
+        </div>
+        <div class="flow-progress-bar"><div class="flow-progress-fill"></div></div>
+        <div class="flow-controls">
+          <button class="flow-play-btn" data-playing="true">⏸ 暫停</button>
+          <span class="flow-step-counter">1 / 6</span>
+        </div>
+      </div>
+
+      <!-- 忘記密碼流程 animated -->
+      <div class="flow-showcase reveal" data-flow="tsg-forgot" data-speed="2200">
+        <h3>忘記密碼流程</h3>
+        <div class="flow-timeline">
+          <div class="flow-step" data-index="0" data-pos="0% 15%">
+            <div class="flow-step-dot">1</div>
+            <div class="flow-step-label">忘記密碼</div>
+            <div class="flow-step-desc">輸入手機或信箱</div>
+          </div>
+          <div class="flow-connector"><div class="flow-connector-fill"></div></div>
+          <div class="flow-step" data-index="1" data-pos="25% 15%">
+            <div class="flow-step-dot">2</div>
+            <div class="flow-step-label">簡訊驗證</div>
+            <div class="flow-step-desc">查看簡訊 OTP</div>
+          </div>
+          <div class="flow-connector"><div class="flow-connector-fill"></div></div>
+          <div class="flow-step" data-index="2" data-pos="50% 15%">
+            <div class="flow-step-dot">3</div>
+            <div class="flow-step-label">信箱驗證</div>
+            <div class="flow-step-desc">查看信箱連結</div>
+          </div>
+          <div class="flow-connector"><div class="flow-connector-fill"></div></div>
+          <div class="flow-step" data-index="3" data-pos="75% 15%">
+            <div class="flow-step-dot">4</div>
+            <div class="flow-step-label">重設密碼</div>
+            <div class="flow-step-desc">設定新密碼</div>
+          </div>
+          <div class="flow-connector"><div class="flow-connector-fill"></div></div>
+          <div class="flow-step" data-index="4" data-pos="100% 15%">
+            <div class="flow-step-dot">5</div>
+            <div class="flow-step-label">重設完成</div>
+            <div class="flow-step-desc">可立即登入</div>
+          </div>
+        </div>
+        <div class="flow-image-viewport" data-aspect="landscape">
+          <img src="assets/images/projects/tsg-member/forget-password.png" alt="忘記密碼流程畫面" loading="lazy">
+        </div>
+        <div class="flow-progress-bar"><div class="flow-progress-fill"></div></div>
+        <div class="flow-controls">
+          <button class="flow-play-btn" data-playing="true">⏸ 暫停</button>
+          <span class="flow-step-counter">1 / 5</span>
+        </div>
+      </div>
+
+      <!-- Sitemap -->
+      <div class="gallery-group reveal">
+        <h3>Sitemap 資訊架構</h3>
+        <div class="gallery">
+          <img src="assets/images/projects/tsg-member/sitemap.png" alt="站點地圖" loading="lazy">
+        </div>
+      </div>
+
+      <!-- 點數系統流程圖 -->
+      <div class="gallery-group reveal">
+        <h3>點數系統流程圖 &amp; 資料架構</h3>
+        <div class="gallery">
+          <img src="assets/images/projects/tsg-member/point-flow.png" alt="點數獲取與兌換流程" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <div class="project-nav">
+        <a href="project-symptom-squirrel.html">&larr; 上一個：松鼠醫生</a>
+        <a href="project-wingstars.html">下一個：WINGSTARS 啦啦隊官方網站 &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container"><p>&copy; 2026 Esme Chang. All rights reserved.</p></div>
+  </footer>
+  <script src="main.js"></script>
+</body>
+</html>
