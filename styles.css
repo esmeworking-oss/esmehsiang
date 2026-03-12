@@ -783,6 +783,7 @@ body.loaded .hero .stagger-5 { animation: fadeUp 0.6s ease forwards 0.5s; }
   border-radius: 100px;
   font-size: 0.85rem;
   font-weight: 600;
+  margin-top: 12px;
   margin-bottom: 16px;
 }
 
