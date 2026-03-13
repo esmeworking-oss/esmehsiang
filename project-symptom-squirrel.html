@@ -7,7 +7,7 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Noto+Sans+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+TC:wght@300;400;500;600&family=Playfair+Display:wght@300;400;500;600;700&family=Noto+Serif+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -104,16 +104,19 @@
       <h2 class="reveal">使用者流程</h2>
 
       <div class="flow-block reveal">
-        <h3>流程 A — 登入與醫師連動</h3>
+        <h3>流程 A — 血壓紀錄</h3>
         <div class="flow-steps">
           開啟 App <span class="flow-arrow">&rarr;</span>
-          顯示 QR Code <span class="flow-arrow">&rarr;</span>
-          醫師用後台掃描 <span class="flow-arrow">&rarr;</span>
-          帳號自動綁定 <span class="flow-arrow">&rarr;</span>
-          進入主頁
+          Tracking <span class="flow-arrow">&rarr;</span>
+          BP Diary <span class="flow-arrow">&rarr;</span>
+          Log Blood Pressure <span class="flow-arrow">&rarr;</span>
+          輸入 SYS/DIA/PUL <span class="flow-arrow">&rarr;</span>
+          Save <span class="flow-arrow">&rarr;</span>
+          查看月曆（綠/黃/紅色點）
         </div>
+        <p class="flow-note">上線後透過使用者訪談發現「入口藏太深、紀錄不夠快」，因此後續在 App 首頁追加了懸浮操作按鈕（FAB），讓使用者打開 App 即可快速記錄血壓。</p>
         <div class="flow-images">
-          <img src="assets/images/projects/symptom-squirrel/overview.png" alt="系統總覽 — 登入與綁定流程" loading="lazy">
+          <img src="assets/images/projects/symptom-squirrel/overview.png" alt="系統總覽 — 血壓紀錄流程" loading="lazy">
         </div>
       </div>
 
@@ -127,6 +130,7 @@
           慶祝動畫 <span class="flow-arrow">&rarr;</span>
           引導進入症狀紀錄
         </div>
+        <p class="flow-note">訪談中發現多數使用者不喜歡冗長操作，而這份問卷需回答 30 題，容易讓人想放棄。為此我們設計了三項機制：① 隨時儲存作答進度；② 增加正向回饋語句，例如「謝謝你的作答，幫助我們讓下次問診更有效率！」；③ 在頂部加入快速切換頁籤的數字按鈕。測試結果：8 名受訪者中有 5 人表示會更願意完成作答。</p>
         <div class="flow-images">
           <img src="assets/images/projects/symptom-squirrel/flow.png" alt="每日問卷填寫流程圖" loading="lazy">
         </div>

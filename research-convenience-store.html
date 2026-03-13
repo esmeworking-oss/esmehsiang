@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>便利商店 APP 競品分析 — Esme Chang</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+TC:wght@300;400;500;600&family=Playfair+Display:wght@300;400;500;600;700&family=Noto+Serif+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Esme.</a>
+      <button class="nav-toggle" id="navToggle" aria-label="開啟選單">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="project-hero">
+    <div class="container">
+      <a href="index.html#about" class="back-link">&larr; 返回首頁</a>
+      <h1>便利商店 APP 競品分析</h1>
+      <span class="project-hero-tag">UX Research</span>
+      <p class="project-hero-desc">針對 7-ELEVEN、全家、萊爾富等主流便利商店 APP 進行功能比較與使用者體驗分析，歸納各平台優劣勢與設計模式。</p>
+      <div class="project-hero-meta">
+        <span><strong>角色：</strong>UX Researcher</span>
+        <span><strong>類型：</strong>競品分析</span>
+        <span><strong>方法：</strong>Heuristic Evaluation / 功能比較</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 研究背景 -->
+  <section class="project-section">
+    <div class="container">
+      <h2 class="reveal">研究背景與目標</h2>
+      <div class="highlights-list reveal">
+        <li>台灣便利商店密度全球最高，各家 APP 已成為會員經營與行銷的核心工具</li>
+        <li>透過系統性分析主流便利商店 APP，了解各平台在會員系統、優惠機制、點數兌換等核心功能的設計差異</li>
+        <li>找出各平台的設計優勢與痛點，作為未來相關產品設計的參考依據</li>
+      </div>
+    </div>
+  </section>
+
+  <!-- 研究方法 -->
+  <section class="project-section">
+    <div class="container">
+      <h2 class="reveal">研究方法</h2>
+      <table class="styled-table reveal">
+        <thead>
+          <tr><th>方法</th><th>說明</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>競品選定</td><td>7-ELEVEN（OPEN POINT）、全家（FamilyMart）、萊爾富（Hi-Life）</td></tr>
+          <tr><td>功能盤點</td><td>逐一比較會員系統、優惠券、點數、支付、寄杯等核心功能</td></tr>
+          <tr><td>Heuristic Evaluation</td><td>以 Nielsen 十大可用性原則評估各 APP 的操作體驗</td></tr>
+          <tr><td>資料整理</td><td>使用 Google Sheets 製作功能對照表與評分矩陣</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 功能比較表 -->
+  <section class="project-section">
+    <div class="container">
+      <h2 class="reveal">功能比較總覽</h2>
+      <table class="styled-table reveal">
+        <thead>
+          <tr><th>功能面向</th><th>7-ELEVEN</th><th>全家</th><th>萊爾富</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>會員等級制度</td><td>有（依消費金額）</td><td>有（依消費頻率）</td><td>較簡化</td></tr>
+          <tr><td>點數系統</td><td>OPEN POINT</td><td>全家點數</td><td>Hi 點</td></tr>
+          <tr><td>行動支付</td><td>icash Pay</td><td>全盈+PAY</td><td>Hi Pay</td></tr>
+          <tr><td>寄杯功能</td><td>有</td><td>有（跨店寄杯）</td><td>有</td></tr>
+          <tr><td>優惠券管理</td><td>分類清楚</td><td>整合度高</td><td>較基本</td></tr>
+          <tr><td>介面設計</td><td>功能多但較複雜</td><td>直覺簡潔</td><td>功能較少但單純</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 研究發現 -->
+  <section class="project-section">
+    <div class="container">
+      <h2 class="reveal">關鍵發現</h2>
+      <ul class="highlights-list reveal">
+        <li><strong>全家的整合度最高</strong> — 支付、點數、優惠券整合在統一流程中，結帳體驗最流暢</li>
+        <li><strong>7-ELEVEN 功能最豐富但學習成本高</strong> — 功能多元但層級複雜，新用戶容易迷失</li>
+        <li><strong>萊爾富功能精簡</strong> — 介面單純但缺乏差異化功能，用戶黏著度相對較低</li>
+        <li><strong>寄杯功能是核心競爭點</strong> — 三家皆有寄杯功能，但全家的跨店寄杯體驗最佳</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <div class="project-nav">
+        <a href="index.html#about">&larr; 返回首頁</a>
+        <a href="research-food-delivery.html">下一個：外送系統競品分析 &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container"><p>&copy; 2026 Esme Chang. All rights reserved.</p></div>
+  </footer>
+  <script src="main.js"></script>
+</body>
+</html>

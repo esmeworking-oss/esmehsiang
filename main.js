@@ -31,7 +31,7 @@
   animate();
 
   // Hover effect on interactive elements
-  const hoverTargets = 'a, button, .btn, .project-card, .nav-toggle, input, textarea, [role="button"]';
+  const hoverTargets = 'a, button, .btn, .project-card, .nav-toggle, .skill-item--clickable, input, textarea, [role="button"]';
 
   document.addEventListener('mouseover', (e) => {
     if (e.target.closest(hoverTargets)) {
@@ -240,6 +240,48 @@
   });
 })();
 
+// ===== Skill Modals =====
+(function () {
+  const triggers = document.querySelectorAll('[data-modal]');
+  if (!triggers.length) return;
+
+  function openModal(id) {
+    const overlay = document.getElementById(id);
+    if (!overlay) return;
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal(overlay) {
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  triggers.forEach((trigger) => {
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      openModal(trigger.dataset.modal);
+    });
+  });
+
+  document.querySelectorAll('.skill-modal-overlay').forEach((overlay) => {
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) closeModal(overlay);
+    });
+
+    const closeBtn = overlay.querySelector('.skill-modal-close');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => closeModal(overlay));
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.skill-modal-overlay.active').forEach(closeModal);
+    }
+  });
+})();
+
 // ===== Lightbox =====
 (function () {
   const lightbox = document.createElement('div');
@@ -250,7 +292,7 @@
   const lbImg = lightbox.querySelector('img');
 
   document.addEventListener('click', (e) => {
-    if (e.target.matches('.gallery img')) {
+    if (e.target.matches('.gallery img, .flow-images img')) {
       lbImg.src = e.target.src;
       lbImg.alt = e.target.alt;
       lightbox.classList.add('active');

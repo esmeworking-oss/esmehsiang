@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Journey Map — Esme Chang</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+TC:wght@300;400;500;600&family=Playfair+Display:wght@300;400;500;600;700&family=Noto+Serif+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Esme.</a>
+      <button class="nav-toggle" id="navToggle" aria-label="開啟選單">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="project-hero">
+    <div class="container">
+      <a href="index.html#about" class="back-link">&larr; 返回首頁</a>
+      <h1>Customer Journey Map</h1>
+      <span class="project-hero-tag">UX Research</span>
+      <p class="project-hero-desc">繪製使用者旅程地圖，從首次接觸到持續使用，系統性標記痛點、情緒變化與設計機會點。</p>
+      <div class="project-hero-meta">
+        <span><strong>角色：</strong>UX Researcher</span>
+        <span><strong>類型：</strong>使用者旅程分析</span>
+        <span><strong>方法：</strong>Journey Mapping / 痛點分析</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 研究背景 -->
+  <section class="project-section">
+    <div class="container">
+      <h2 class="reveal">研究背景與目標</h2>
+      <div class="highlights-list reveal">
+        <li>Customer Journey Map 是理解使用者完整體驗的重要工具，能揭示單一頁面分析難以發現的問題</li>
+        <li>透過繪製從「認知 → 考慮 → 使用 → 留存」的完整旅程，找出每個階段的痛點與機會</li>
+        <li>將抽象的使用者體驗視覺化，幫助團隊建立共同理解並對齊設計方向</li>
+      </div>
+    </div>
+  </section>
+
+  <!-- 研究方法 -->
+  <section class="project-section">
+    <div class="container">
+      <h2 class="reveal">研究方法</h2>
+      <table class="styled-table reveal">
+        <thead>
+          <tr><th>方法</th><th>說明</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>旅程階段定義</td><td>將使用者體驗拆分為認知、考慮、首次使用、持續使用、推薦等階段</td></tr>
+          <tr><td>接觸點盤點</td><td>列出使用者在每個階段與產品的接觸點（Touchpoints）</td></tr>
+          <tr><td>情緒曲線繪製</td><td>根據使用者在各接觸點的體驗，標記情緒高低起伏</td></tr>
+          <tr><td>痛點與機會標記</td><td>識別情緒低點對應的痛點，並標記設計改善機會</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 旅程階段 -->
+  <section class="project-section">
+    <div class="container">
+      <h2 class="reveal">旅程階段總覽</h2>
+      <table class="styled-table reveal">
+        <thead>
+          <tr><th>階段</th><th>使用者行為</th><th>接觸點</th><th>情緒</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>認知</td><td>透過廣告或朋友推薦得知產品</td><td>社群廣告、口碑推薦</td><td>好奇 / 中性</td></tr>
+          <tr><td>考慮</td><td>搜尋評價、比較替代方案</td><td>App Store、評論網站</td><td>期待但猶豫</td></tr>
+          <tr><td>首次使用</td><td>下載安裝、註冊、探索功能</td><td>Onboarding 流程</td><td>興奮 → 可能困惑</td></tr>
+          <tr><td>持續使用</td><td>日常操作、使用核心功能</td><td>核心功能頁面</td><td>滿意 / 遇到痛點</td></tr>
+          <tr><td>推薦 / 流失</td><td>推薦朋友或停止使用</td><td>分享功能、通知推送</td><td>忠誠 / 失望</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 研究發現 -->
+  <section class="project-section">
+    <div class="container">
+      <h2 class="reveal">關鍵發現</h2>
+      <ul class="highlights-list reveal">
+        <li><strong>Onboarding 是情緒最劇烈的階段</strong> — 使用者從興奮到困惑只需要幾個步驟，註冊流程過長是主因</li>
+        <li><strong>「首次成功體驗」決定留存</strong> — 使用者能否在第一次使用中完成核心任務，直接影響是否回訪</li>
+        <li><strong>痛點集中在狀態不透明</strong> — 等待過程缺乏回饋（如載入、處理中）會大幅降低使用者信任</li>
+        <li><strong>推薦行為需要情緒高點觸發</strong> — 分享提示應出現在使用者完成任務、獲得正面回饋的時刻</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <div class="project-nav">
+        <a href="research-comparison-website.html">&larr; 上一個：比較網站調查與研究</a>
+        <a href="index.html#about">返回首頁 &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container"><p>&copy; 2026 Esme Chang. All rights reserved.</p></div>
+  </footer>
+  <script src="main.js"></script>
+</body>
+</html>

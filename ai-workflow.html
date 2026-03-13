@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Design Workflow — Esme Chang</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+TC:wght@300;400;500;600&family=Playfair+Display:wght@300;400;500;600;700&family=Noto+Serif+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* === AI Workflow Page Specific === */
+    .workflow-hero {
+      padding-top: calc(var(--nav-height) + 60px);
+      padding-bottom: 60px;
+      background: linear-gradient(160deg, var(--color-white) 0%, var(--color-primary-light) 100%);
+    }
+
+    .workflow-hero h1 {
+      font-family: var(--font-en);
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+
+    .workflow-hero-subtitle {
+      font-size: 1.15rem;
+      color: var(--color-text-light);
+      margin-bottom: 24px;
+      max-width: 640px;
+      line-height: 1.8;
+    }
+
+    .workflow-hero-tags {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    /* Tool Stack Cards */
+    .tool-stack {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 32px;
+    }
+
+    .tool-card {
+      padding: 28px 24px;
+      background: var(--color-white);
+      border-radius: 12px;
+      border: 1px solid var(--color-border);
+      transition: all var(--transition);
+      text-align: center;
+    }
+
+    .tool-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px var(--color-card-shadow);
+    }
+
+    .tool-card-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+
+    .tool-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .tool-card .tool-card-role {
+      font-size: 0.8rem;
+      color: var(--color-primary);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .tool-card p {
+      font-size: 0.85rem;
+      color: var(--color-text-light);
+      line-height: 1.6;
+    }
+
+    /* Process Steps */
+    .process-step {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 32px;
+      align-items: start;
+      margin-bottom: 48px;
+    }
+
+    .step-number {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      color: var(--color-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-en);
+      font-size: 1.5rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .step-content h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .step-tool-badge {
+      display: inline-block;
+      padding: 4px 14px;
+      background: var(--color-primary-light);
+      color: var(--color-primary);
+      border-radius: 100px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .step-content ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .step-content ul li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 10px;
+      font-size: 0.95rem;
+      color: var(--color-text-light);
+      line-height: 1.7;
+    }
+
+    .step-content ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--color-primary);
+    }
+
+    .step-efficiency {
+      margin-top: 16px;
+      padding: 12px 20px;
+      background: var(--color-primary-light);
+      border-radius: 8px;
+      font-size: 0.9rem;
+      color: var(--color-primary-dark);
+      font-weight: 500;
+    }
+
+    /* Iteration Loop */
+    .iteration-loop {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 40px 24px;
+      background: var(--color-white);
+      border-radius: 16px;
+      border: 1px solid var(--color-border);
+      margin-top: 32px;
+    }
+
+    .loop-item {
+      padding: 10px 24px;
+      background: var(--color-primary-light);
+      border-radius: 100px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--color-primary-dark);
+      transition: all var(--transition);
+    }
+
+    .loop-arrow {
+      font-size: 1.2rem;
+      color: var(--color-primary);
+      font-weight: 700;
+    }
+
+    .loop-back {
+      width: 100%;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--color-text-light);
+      margin-top: 8px;
+    }
+
+    /* Case Study */
+    .case-study-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-top: 32px;
+      align-items: start;
+    }
+
+    .case-study-desc {
+      font-size: 1.05rem;
+      color: var(--color-text-light);
+      line-height: 1.8;
+    }
+
+    .case-study-desc strong {
+      color: var(--color-text);
+    }
+
+    .case-study-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .feature-chip {
+      padding: 12px 16px;
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: 10px;
+      font-size: 0.85rem;
+      color: var(--color-text-light);
+      text-align: center;
+      font-weight: 500;
+    }
+
+    /* Case Steps */
+    .case-step {
+      padding: 32px;
+      background: var(--color-white);
+      border-radius: 16px;
+      border: 1px solid var(--color-border);
+      margin-bottom: 24px;
+    }
+
+    .case-step-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .case-step-num {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      color: var(--color-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    .case-step-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .case-step-tool {
+      margin-left: auto;
+      padding: 4px 14px;
+      background: var(--color-primary-light);
+      color: var(--color-primary);
+      border-radius: 100px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .case-step ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 16px;
+    }
+
+    .case-step ul li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 8px;
+      font-size: 0.92rem;
+      color: var(--color-text-light);
+      line-height: 1.7;
+    }
+
+    .case-step ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--color-primary);
+    }
+
+    .case-step ul li strong {
+      color: var(--color-text);
+    }
+
+    .case-step .time-saved {
+      padding: 10px 20px;
+      background: var(--color-primary-light);
+      border-radius: 8px;
+      font-size: 0.88rem;
+      color: var(--color-primary-dark);
+      font-weight: 600;
+    }
+
+    /* Result Table */
+    .result-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      margin-top: 24px;
+    }
+
+    .result-table th,
+    .result-table td {
+      padding: 16px 20px;
+      text-align: left;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .result-table th {
+      background: var(--color-primary-light);
+      color: var(--color-primary-dark);
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+
+    .result-table tr:hover td {
+      background: var(--color-bg);
+    }
+
+    .result-table tr:last-child td {
+      font-weight: 700;
+      background: var(--color-primary-light);
+      color: var(--color-primary-dark);
+    }
+
+    .result-table .boost {
+      color: var(--color-primary);
+      font-weight: 700;
+    }
+
+    /* Quote block */
+    .workflow-quote {
+      padding: 32px;
+      background: var(--color-primary);
+      border-radius: 16px;
+      color: var(--color-white);
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-top: 32px;
+      text-align: center;
+    }
+
+    .workflow-quote strong {
+      color: #fff;
+    }
+
+    /* Viewpoint */
+    .viewpoint-text {
+      font-size: 1.15rem;
+      line-height: 1.9;
+      color: var(--color-text-light);
+      max-width: 680px;
+    }
+
+    .viewpoint-text strong {
+      color: var(--color-text);
+    }
+
+    .viewpoint-highlight {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--color-primary-dark);
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+
+    .last-updated {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--color-border);
+      font-size: 0.85rem;
+      color: var(--color-text-light);
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .tool-stack {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .tool-stack {
+        grid-template-columns: 1fr;
+      }
+
+      .process-step {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .step-number {
+        width: 48px;
+        height: 48px;
+        font-size: 1.2rem;
+      }
+
+      .case-study-intro {
+        grid-template-columns: 1fr;
+      }
+
+      .case-study-features {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .case-step-header {
+        flex-wrap: wrap;
+      }
+
+      .case-step-tool {
+        margin-left: 0;
+      }
+
+      .result-table {
+        display: block;
+        overflow-x: auto;
+      }
+    }
+  </style>
+</head>
+<body class="loaded">
+
+  <nav class="nav scrolled" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Esme.</a>
+      <button class="nav-toggle" id="navToggle" aria-label="開啟選單">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#research">Research</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="workflow-hero">
+    <div class="container">
+      <a href="index.html" class="back-link">&larr; 返回首頁</a>
+      <h1>AI-Enhanced Design Workflow</h1>
+      <p class="workflow-hero-subtitle">我將 AI 工具深度整合進設計流程的每個階段，不是取代思考，而是<strong>放大產能、加速驗證、縮短從想法到落地的距離</strong>。這套流程持續探索新工具、優化環節，讓效率隨著工具演進不斷提升。</p>
+      <div class="workflow-hero-tags">
+        <span class="tag">Antigravity</span>
+        <span class="tag">Claude Code</span>
+        <span class="tag">Framer</span>
+        <span class="tag">Figma Make</span>
+        <span class="tag">Vibe Coding</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tool Stack -->
+  <section class="project-section">
+    <div class="container">
+      <h2 class="reveal">Tool Stack</h2>
+      <div class="tool-stack reveal">
+        <div class="tool-card">
+          <div class="tool-card-icon">&#x1f680;</div>
+          <h3>Antigravity</h3>
+          <div class="tool-card-role">發想 · 探索</div>
+          <p>AI 驅動的設計發想與視覺探索，快速產出多種設計方向</p>
+        </div>
+        <div class="tool-card">
+          <div class="tool-card-icon">&#x1f3a8;</div>
+          <h3>Figma Make</h3>
+          <div class="tool-card-role">設計 · 迭代</div>
+          <p>AI 輔助 UI 設計與元件生成，加速設計稿產出</p>
+        </div>
+        <div class="tool-card">
+          <div class="tool-card-icon">&#x1f4bb;</div>
+          <h3>Claude Code</h3>
+          <div class="tool-card-role">開發 · 原型</div>
+          <p>AI 協作開發、Vibe Coding，快速將設計轉為可運作原型</p>
+        </div>
+        <div class="tool-card">
+          <div class="tool-card-icon">&#x26a1;</div>
+          <h3>Framer</h3>
+          <div class="tool-card-role">落地 · 上線</div>
+          <p>No-code 網站建置與部署，從設計到上線一人完成</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Design Process -->
+  <section class="project-section">
+    <div class="container">
+      <h2 class="reveal">Design Process</h2>
+
+      <div class="process-step reveal">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <h3>發想與探索 Ideation</h3>
+          <span class="step-tool-badge">Antigravity</span>
+          <ul>
+            <li>透過 AI 快速產出多種設計方向與視覺概念</li>
+            <li>在短時間內探索大量可能性，避免過早收斂</li>
+            <li>將模糊的想法轉化為具體的視覺參考</li>
+          </ul>
+          <div class="step-efficiency">效率提升：原本需要數小時的 moodboard 蒐集，縮短至 30 分鐘內完成</div>
+        </div>
+      </div>
+
+      <div class="process-step reveal">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <h3>設計與迭代 Design & Iteration</h3>
+          <span class="step-tool-badge">Figma Make</span>
+          <ul>
+            <li>利用 AI 輔助快速生成 UI 元件與版面配置</li>
+            <li>根據設計規範自動產出一致的元件變體</li>
+            <li>加速從線框稿到高保真設計稿的轉換</li>
+          </ul>
+          <div class="step-efficiency">效率提升：重複性的元件設計工作減少約 40%，更多時間投入在體驗細節</div>
+        </div>
+      </div>
+
+      <div class="process-step reveal">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <h3>原型與開發 Prototyping & Development</h3>
+          <span class="step-tool-badge">Claude Code</span>
+          <ul>
+            <li>以 Vibe Coding 方式與 AI 協作，快速將設計稿轉為可互動的原型</li>
+            <li>即時產出前端程式碼，不需等待工程師排程</li>
+            <li>設計師主導開發節奏，邊做邊調整</li>
+          </ul>
+          <div class="step-efficiency">效率提升：原型製作速度提升 3-5 倍，設計驗證週期從週縮短至天</div>
+        </div>
+      </div>
+
+      <div class="process-step reveal">
+        <div class="step-number">4</div>
+        <div class="step-content">
+          <h3>落地與上線 Launch & Deploy</h3>
+          <span class="step-tool-badge">Framer</span>
+          <ul>
+            <li>No-code 快速建置響應式網站</li>
+            <li>從設計到上線一人完成，無需額外開發資源</li>
+            <li>支援即時更新，隨時根據回饋調整內容</li>
+          </ul>
+          <div class="step-efficiency">效率提升：網站上線時間從數週壓縮至數天</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Continuous Iteration -->
+  <section class="project-section">
+    <div class="container">
+      <h2 class="reveal">Continuous Iteration</h2>
+      <div class="iteration-loop reveal">
+        <span class="loop-item">發想</span>
+        <span class="loop-arrow">&rarr;</span>
+        <span class="loop-item">設計</span>
+        <span class="loop-arrow">&rarr;</span>
+        <span class="loop-item">原型</span>
+        <span class="loop-arrow">&rarr;</span>
+        <span class="loop-item">上線</span>
+        <span class="loop-arrow">&rarr;</span>
+        <span class="loop-item">回饋</span>
+        <span class="loop-arrow">&rarr;</span>
+        <span class="loop-item">優化</span>
+        <span class="loop-back">&#x21bb; 持續循環 — 每次專案都在優化流程</span>
+      </div>
+
+      <ul class="highlights-list reveal" style="margin-top: 32px;">
+        <li><strong>持續更新</strong> — 隨著 AI 工具快速演進，即時導入更好的解決方案</li>
+        <li><strong>持續迭代</strong> — 每次專案結束後回顧流程，找出可以再加速的環節</li>
+        <li><strong>保持彈性</strong> — 不同專案根據需求靈活調整工具組合與流程順序</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Case Study -->
+  <section class="project-section">
+    <div class="container">
+      <h2 class="reveal">Case Study: 這份作品集網站</h2>
+      <div class="case-study-intro reveal">
+        <div class="case-study-desc">
+          <p>從零打造一個產品設計師求職作品集網站，包含 Loading 動畫、響應式設計、5 個專案詳細頁、研究展示區塊——<strong>全程以 AI 工具加速，一人完成設計到上線</strong>。</p>
+        </div>
+        <div class="case-study-features">
+          <div class="feature-chip">Loading 進場動畫</div>
+          <div class="feature-chip">RWD 響應式設計</div>
+          <div class="feature-chip">5 個專案詳細頁</div>
+          <div class="feature-chip">滾動漸入動畫</div>
+          <div class="feature-chip">Lightbox 圖片預覽</div>
+          <div class="feature-chip">互動式流程展示</div>
+        </div>
+      </div>
+
+      <!-- Step 1 -->
+      <div class="case-step reveal" style="margin-top: 40px;">
+        <div class="case-step-header">
+          <div class="case-step-num">1</div>
+          <div class="case-step-title">發想與視覺探索</div>
+          <span class="case-step-tool">Antigravity</span>
+        </div>
+        <ul>
+          <li>輸入關鍵字「簡潔、留白、讓作品說話」，AI 快速生成多組視覺風格方向</li>
+          <li>從數十種配色與版面構想中，篩選出「清新藍白 + 大量留白」的設計基調</li>
+          <li>參考 umao.co.jp 的設計語言，透過 AI 延伸出適合個人品牌的視覺方案</li>
+        </ul>
+        <div class="time-saved">視覺探索從 2-3 天壓縮至半天</div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="case-step reveal">
+        <div class="case-step-header">
+          <div class="case-step-num">2</div>
+          <div class="case-step-title">UI 設計與元件製作</div>
+          <span class="case-step-tool">Figma Make</span>
+        </div>
+        <ul>
+          <li>利用 AI 輔助生成專案卡片（Project Card）的多種排版變體</li>
+          <li>快速產出 Hero Section、About、Contact 等區塊的 UI 元件</li>
+          <li>AI 自動生成一致的間距與字級系統，確保全站視覺統一</li>
+        </ul>
+        <div class="time-saved">5 個專案頁面的 UI 元件從 3 天縮短至 1 天</div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="case-step reveal">
+        <div class="case-step-header">
+          <div class="case-step-num">3</div>
+          <div class="case-step-title">Vibe Coding 開發</div>
+          <span class="case-step-tool">Claude Code</span>
+        </div>
+        <ul>
+          <li><strong>網站架構</strong> — 透過對話描述需求，AI 直接產出 HTML/CSS/JS 完整程式碼</li>
+          <li><strong>Loading 動畫</strong> — 描述「首次造訪顯示 Loading，重複造訪跳過」，AI 實作 sessionStorage 記憶邏輯</li>
+          <li><strong>滾動動畫</strong> — 描述「區塊滾入時淡入上移」，AI 用 IntersectionObserver 完成</li>
+          <li><strong>專案詳細頁</strong> — 提供每個專案的痛點、流程、設計原因等內容，AI 自動套版生成 5 個獨立頁面</li>
+          <li><strong>響應式設計</strong> — 一句「確保 Desktop / Tablet / Mobile 都能正常顯示」，AI 完成所有斷點調整</li>
+          <li><strong>即時迭代</strong> — 看到不滿意的地方，直接用自然語言描述修改，秒級回應</li>
+        </ul>
+        <div class="time-saved">整站開發（含 5 個專案頁）從預估 2-3 週壓縮至 3 天</div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="case-step reveal">
+        <div class="case-step-header">
+          <div class="case-step-num">4</div>
+          <div class="case-step-title">上線與持續更新</div>
+          <span class="case-step-tool">Framer / GitHub Pages</span>
+        </div>
+        <ul>
+          <li>快速部署上線，即時預覽效果</li>
+          <li>收到回饋後，搭配 Claude Code 即時修改並重新部署</li>
+          <li>持續新增內容（如這份 AI 流程頁面本身），保持作品集的鮮活度</li>
+        </ul>
+        <div class="time-saved">部署 + 修改循環從「每次半天」縮短至「每次 30 分鐘」</div>
+      </div>
+
+      <!-- Results Table -->
+      <h3 class="reveal" style="font-size: 1.2rem; margin-top: 48px; margin-bottom: 8px;">成果總結</h3>
+      <table class="result-table reveal">
+        <thead>
+          <tr>
+            <th>環節</th>
+            <th>傳統方式預估</th>
+            <th>AI-Enhanced 實際</th>
+            <th>效率提升</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>視覺探索</td>
+            <td>2-3 天</td>
+            <td>半天</td>
+            <td class="boost">4-6x</td>
+          </tr>
+          <tr>
+            <td>UI 設計</td>
+            <td>3 天</td>
+            <td>1 天</td>
+            <td class="boost">3x</td>
+          </tr>
+          <tr>
+            <td>前端開發</td>
+            <td>2-3 週</td>
+            <td>3 天</td>
+            <td class="boost">5-7x</td>
+          </tr>
+          <tr>
+            <td>部署與迭代</td>
+            <td>每次半天</td>
+            <td>每次 30 分鐘</td>
+            <td class="boost">8x</td>
+          </tr>
+          <tr>
+            <td>整體</td>
+            <td>約 4-5 週</td>
+            <td>約 1 週</td>
+            <td class="boost">4-5x</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="workflow-quote reveal">
+        這不是「AI 幫我做完了」，而是「AI 讓我能在一週內，以一人之力完成原本需要設計師 + 前端工程師花一個月才能完成的作品集網站」。
+      </div>
+    </div>
+  </section>
+
+  <!-- Viewpoint -->
+  <section class="project-section">
+    <div class="container">
+      <h2 class="reveal">My Perspective</h2>
+      <div class="reveal">
+        <p class="viewpoint-highlight">AI 不會取代設計師，但善用 AI 的設計師會取代不用 AI 的設計師。</p>
+        <p class="viewpoint-text">我把 AI 當作設計流程中的加速器——它處理重複性工作，我專注在策略思考、使用者洞察、和體驗細節。這讓我能以更少的時間交付更多的價值，同時維持設計品質。</p>
+        <div class="last-updated">
+          <p>最後更新：2026.03 ｜ 此流程持續優化中</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Esme Chang. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

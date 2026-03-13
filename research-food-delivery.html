@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>外送系統競品分析 — Esme Chang</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+TC:wght@300;400;500;600&family=Playfair+Display:wght@300;400;500;600;700&family=Noto+Serif+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Esme.</a>
+      <button class="nav-toggle" id="navToggle" aria-label="開啟選單">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="project-hero">
+    <div class="container">
+      <a href="index.html#about" class="back-link">&larr; 返回首頁</a>
+      <h1>外送系統競品分析</h1>
+      <span class="project-hero-tag">UX Research</span>
+      <p class="project-hero-desc">深入分析 Uber Eats、foodpanda 等外送平台的核心功能、使用流程與差異化策略，提出設計改善建議。</p>
+      <div class="project-hero-meta">
+        <span><strong>角色：</strong>UX Researcher</span>
+        <span><strong>類型：</strong>競品分析 / 流程拆解</span>
+        <span><strong>方法：</strong>Task Analysis / 功能比較</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 研究背景 -->
+  <section class="project-section">
+    <div class="container">
+      <h2 class="reveal">研究背景與目標</h2>
+      <div class="highlights-list reveal">
+        <li>外送平台已成為台灣消費者日常生活的一部分，市場競爭激烈</li>
+        <li>透過拆解 Uber Eats 與 foodpanda 的核心流程，分析兩大平台在使用者體驗上的差異</li>
+        <li>針對搜尋、下單、追蹤、評價等關鍵流程提出設計改善建議</li>
+      </div>
+    </div>
+  </section>
+
+  <!-- 研究方法 -->
+  <section class="project-section">
+    <div class="container">
+      <h2 class="reveal">研究方法</h2>
+      <table class="styled-table reveal">
+        <thead>
+          <tr><th>方法</th><th>說明</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>競品選定</td><td>Uber Eats、foodpanda</td></tr>
+          <tr><td>Task Analysis</td><td>拆解從搜尋餐廳到完成訂單的完整流程步驟</td></tr>
+          <tr><td>功能比較</td><td>比較搜尋篩選、餐廳資訊、訂單追蹤、優惠機制等功能差異</td></tr>
+          <tr><td>策略分析</td><td>分析兩平台的商業模式與差異化策略</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 流程拆解 -->
+  <section class="project-section">
+    <div class="container">
+      <h2 class="reveal">核心流程拆解</h2>
+
+      <div class="flow-block reveal">
+        <h3>Uber Eats 下單流程</h3>
+        <div class="flow-steps">
+          <span>開啟 APP</span>
+          <span class="flow-arrow">&rarr;</span>
+          <span>瀏覽 / 搜尋餐廳</span>
+          <span class="flow-arrow">&rarr;</span>
+          <span>查看菜單</span>
+          <span class="flow-arrow">&rarr;</span>
+          <span>加入購物車</span>
+          <span class="flow-arrow">&rarr;</span>
+          <span>結帳付款</span>
+          <span class="flow-arrow">&rarr;</span>
+          <span>即時追蹤</span>
+          <span class="flow-arrow">&rarr;</span>
+          <span>收餐評價</span>
+        </div>
+      </div>
+
+      <div class="flow-block reveal">
+        <h3>foodpanda 下單流程</h3>
+        <div class="flow-steps">
+          <span>開啟 APP</span>
+          <span class="flow-arrow">&rarr;</span>
+          <span>選擇分類 / 搜尋</span>
+          <span class="flow-arrow">&rarr;</span>
+          <span>查看餐廳與菜單</span>
+          <span class="flow-arrow">&rarr;</span>
+          <span>客製化餐點</span>
+          <span class="flow-arrow">&rarr;</span>
+          <span>確認訂單</span>
+          <span class="flow-arrow">&rarr;</span>
+          <span>追蹤外送員</span>
+          <span class="flow-arrow">&rarr;</span>
+          <span>取餐完成</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 功能比較 -->
+  <section class="project-section">
+    <div class="container">
+      <h2 class="reveal">功能比較</h2>
+      <table class="styled-table reveal">
+        <thead>
+          <tr><th>功能面向</th><th>Uber Eats</th><th>foodpanda</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>搜尋與篩選</td><td>智慧推薦 + 多維度篩選</td><td>分類明確 + 排序選項</td></tr>
+          <tr><td>餐廳資訊</td><td>評分 + 預估時間 + 外送費</td><td>評分 + 最低消費 + 優惠標示</td></tr>
+          <tr><td>優惠機制</td><td>Uber One 訂閱制</td><td>pandapro + 折扣碼</td></tr>
+          <tr><td>訂單追蹤</td><td>地圖即時追蹤</td><td>進度條 + 地圖追蹤</td></tr>
+          <tr><td>支付方式</td><td>信用卡 / Apple Pay / LINE Pay</td><td>信用卡 / 貨到付款 / LINE Pay</td></tr>
+          <tr><td>特色功能</td><td>團體訂單、排程預約</td><td>生鮮雜貨、pandamart</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 研究發現 -->
+  <section class="project-section">
+    <div class="container">
+      <h2 class="reveal">關鍵發現</h2>
+      <ul class="highlights-list reveal">
+        <li><strong>Uber Eats 的搜尋體驗更智慧</strong> — 推薦演算法根據歷史訂單與偏好提供個人化建議</li>
+        <li><strong>foodpanda 的優惠機制更直覺</strong> — 折扣資訊在瀏覽階段就清楚標示，降低決策成本</li>
+        <li><strong>訂單追蹤是留存關鍵</strong> — 即時地圖追蹤大幅降低等待焦慮，兩家皆做得不錯</li>
+        <li><strong>foodpanda 的生態系更廣</strong> — pandamart 拓展到生鮮雜貨，創造更多使用場景</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <div class="container">
+      <div class="project-nav">
+        <a href="research-convenience-store.html">&larr; 上一個：便利商店 APP 競品分析</a>
+        <a href="research-comparison-website.html">下一個：比較網站調查與研究 &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container"><p>&copy; 2026 Esme Chang. All rights reserved.</p></div>
+  </footer>
+  <script src="main.js"></script>
+</body>
+</html>

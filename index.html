@@ -21,7 +21,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Noto+Sans+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+TC:wght@300;400;500;600&family=Playfair+Display:wght@300;400;500;600;700&family=Noto+Serif+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#000000">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -47,7 +48,7 @@
       <ul class="nav-links" id="navLinks">
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="#research">Research</a></li>
+        <li><a href="ai-workflow.html">AI Workflow</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
@@ -88,10 +89,17 @@
           <p>我是具備英日雙語優勢、熟悉完整產品生命週期的產品設計師。擅長跨部門專案推動與跨文化溝通（TOEIC 935 / JLPT N1）。</p>
           <p>累積跨國電商、醫療 App 專案經驗，從需求定義到交付 QA 一手包辦。同時活用 AI 工具與 Vibe Coding 快速將想法落地為可運作的產品原型，讓設計不只停留在畫面，而是能被驗證的真實體驗。</p>
           <div class="skills">
-            <div class="skill-item reveal">
+            <div class="skill-item skill-item--ai reveal">
+              <div class="skill-icon">&#x1f916;</div>
+              <h3>AI × Vibe Coding</h3>
+              <p>善用 AI 工具加速設計，以 Vibe Coding 快速打造可運作原型</p>
+              <a href="ai-workflow.html" class="btn btn-primary btn-sm">查看 AI 流程</a>
+            </div>
+            <div class="skill-item skill-item--clickable reveal" data-modal="modal-research">
               <div class="skill-icon">&#x1f50d;</div>
               <h3>UX Research</h3>
               <p>競品分析、使用者訪談、Journey Map</p>
+              <span class="btn btn-primary btn-sm">查看詳情</span>
             </div>
             <div class="skill-item reveal">
               <div class="skill-icon">&#x1f3a8;</div>
@@ -102,11 +110,6 @@
               <div class="skill-icon">&#x26a1;</div>
               <h3>Prototyping</h3>
               <p>互動原型、使用者流程、可用性測試</p>
-            </div>
-            <div class="skill-item reveal">
-              <div class="skill-icon">&#x1f916;</div>
-              <h3>AI × Vibe Coding</h3>
-              <p>善用 AI 工具加速設計，以 Vibe Coding 快速打造可運作原型</p>
             </div>
           </div>
         </div>
@@ -199,35 +202,6 @@
     </div>
   </section>
 
-  <!-- Research Section -->
-  <section class="section research" id="research">
-    <div class="container">
-      <h2 class="section-title reveal">Research &amp; Analysis</h2>
-      <p class="section-subtitle reveal">除了介面設計，我也具備 UX 研究與分析能力。</p>
-      <div class="research-grid">
-        <div class="research-card reveal">
-          <div class="research-icon">&#x1f4f1;</div>
-          <h3>便利商店 APP 分析</h3>
-          <p>針對主流便利商店 APP 進行功能比較與使用者體驗分析</p>
-        </div>
-        <div class="research-card reveal">
-          <div class="research-icon">&#x1f6f5;</div>
-          <h3>外送系統競品分析</h3>
-          <p>分析外送平台的核心功能、使用流程與差異化策略</p>
-        </div>
-        <div class="research-card reveal">
-          <div class="research-icon">&#x1f310;</div>
-          <h3>比較網站調查與研究</h3>
-          <p>研究比較類網站的資訊架構與決策引導設計</p>
-        </div>
-        <div class="research-card reveal">
-          <div class="research-icon">&#x1f5fa;</div>
-          <h3>Customer Journey Map</h3>
-          <p>繪製使用者旅程地圖，找出痛點與機會點</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- Contact Section -->
   <section class="section contact" id="contact">
@@ -249,6 +223,60 @@
       <p>&copy; 2026 Esme Chang. All rights reserved.</p>
     </div>
   </footer>
+
+  <!-- Skill Modals -->
+  <div class="skill-modal-overlay" id="modal-research">
+    <div class="skill-modal">
+      <button class="skill-modal-close" aria-label="關閉">&times;</button>
+      <div class="skill-modal-header">
+        <span class="skill-modal-icon">&#x1f50d;</span>
+        <h2>UX Research</h2>
+      </div>
+      <p class="skill-modal-desc">我在多個專案中執行使用者研究與競品分析，透過系統性的調查方法找出使用者痛點與產品機會。</p>
+      <div class="skill-modal-grid">
+        <a href="research-convenience-store.html" class="skill-modal-card">
+          <div class="skill-modal-card-icon">&#x1f4f1;</div>
+          <h3>便利商店 APP 分析</h3>
+          <p>針對 7-ELEVEN、全家、萊爾富等主流便利商店 APP 進行功能比較與使用者體驗分析，歸納各平台優劣勢與設計模式。</p>
+          <div class="skill-modal-tags">
+            <span class="tag">競品分析</span>
+            <span class="tag">功能比較</span>
+            <span class="tag">UX 評估</span>
+          </div>
+        </a>
+        <a href="research-food-delivery.html" class="skill-modal-card">
+          <div class="skill-modal-card-icon">&#x1f6f5;</div>
+          <h3>外送系統競品分析</h3>
+          <p>深入分析 Uber Eats、foodpanda 等外送平台的核心功能、使用流程與差異化策略，提出設計改善建議。</p>
+          <div class="skill-modal-tags">
+            <span class="tag">競品分析</span>
+            <span class="tag">流程拆解</span>
+            <span class="tag">策略分析</span>
+          </div>
+        </a>
+        <a href="research-comparison-website.html" class="skill-modal-card">
+          <div class="skill-modal-card-icon">&#x1f310;</div>
+          <h3>比較網站調查與研究</h3>
+          <p>研究比較類網站的資訊架構與決策引導設計，分析如何有效呈現多產品資訊以輔助使用者做出選擇。</p>
+          <div class="skill-modal-tags">
+            <span class="tag">資訊架構</span>
+            <span class="tag">使用者決策</span>
+            <span class="tag">桌面研究</span>
+          </div>
+        </a>
+        <a href="research-journey-map.html" class="skill-modal-card">
+          <div class="skill-modal-card-icon">&#x1f5fa;</div>
+          <h3>Customer Journey Map</h3>
+          <p>繪製使用者旅程地圖，從首次接觸到持續使用，系統性標記痛點、情緒變化與設計機會點。</p>
+          <div class="skill-modal-tags">
+            <span class="tag">Journey Map</span>
+            <span class="tag">痛點分析</span>
+            <span class="tag">使用者洞察</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
 
   <script src="main.js"></script>
 </body>
